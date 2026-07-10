@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Family Bazar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">A Family Bazar</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>স্বাগতম এ ফ্যামিলি বাজারে</h1>
+        <p>আপনার প্রয়োজনীয় সব ভেষজ ও আধুনিক পণ্য এখন এক জায়গায়।</p>
+    </section>
+
+    <section id="about">
+        <h2>আমাদের সম্পর্কে (About Us)</h2>
+        <p>Ergon Pharmaceuticals (Ayurvedic) & Modern Herbal-এর খাঁটি ও মানসম্মত পণ্য আমরা পৌঁছে দিচ্ছি আপনার দোরগোড়ায়।</p>
+    </section>
+
+    <section id="products">
+        <h2>আমাদের পণ্যসমূহ (Products)</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <h3>আয়ুর্বেদিক পণ্য ১</h3>
+                <p>মূল্য: ৫০০ টাকা</p>
+                <button onclick="addToCart('আয়ুর্বেদিক পণ্য ১')">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <h3>মডার্ন হারবাল পণ্য ২</h3>
+                <p>মূল্য: ৩৫০ টাকা</p>
+                <button onclick="addToCart('মডার্ন হারবাল পণ্য ২')">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>যোগাযোগ (Contact)</h2>
+        <p>📱 বিকাশ/নগদ/রকেট: 01XXXXXXXXX</p>
+        <p>💬 WhatsApp Chat | 📧 Email: info@example.com</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
