@@ -184,7 +184,63 @@
     <section id="products" style="padding: 20px; background: #fafafa;">
         <h2 style="text-align: center; margin-bottom: 20px; color: var(--primary-color);">আমাদের পণ্যসমূহ (Products)</h2>
         <div class="product-grid">
+        <!-- Product Card - Bed Sheet Gallery -->
+        <div class="product-card">
+            <!-- ইমেজ স্লাইডার কন্টেইনার -->
+            <div class="bedsheet-slider-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 8px;">
+                <div id="bedsheet-slides" style="display: flex; transition: transform 0.4s ease-in-out; width: 100%;">
+                    <!-- প্রথম ছবিগুলো লোড হবে -->
+                    <img src="IMG-20260717-WA0000.jpg" alt="ডিজাইন ১" style="width: 100%; flex-shrink: 0; height: auto;">
+                    <img src="IMG-20260717-WA0001.jpg" alt="ডিজাইন ২" style="width: 100%; flex-shrink: 0; height: auto;">
+                    <img src="IMG-20260717-WA0002.jpg" alt="ডিজাইন ৩" style="width: 100%; flex-shrink: 0; height: auto;">
+                    <img src="IMG-20260717-WA0003.jpg" alt="ডিজাইন ৪" style="width: 100%; flex-shrink: 0; height: auto;">
+                    <img src="IMG-20260717-WA0004.jpg" alt="ডিজাইন ৫" style="width: 100%; flex-shrink: 0; height: auto;">
+                </div>
+                
+                <!-- নেভিগেশন বাটন (Next & Previous) -->
+                <button onclick="moveBedsheetSlide(-1)" style="position: absolute; top: 50%; left: 5px; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; padding: 10px 14px; cursor: pointer; border-radius: 50%; font-weight: bold; z-index: 10; font-size: 16px;">❮</button>
+                <button onclick="moveBedsheetSlide(1)" style="position: absolute; top: 50%; right: 5px; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; padding: 10px 14px; cursor: pointer; border-radius: 50%; font-weight: bold; z-index: 10; font-size: 16px;">❯</button>
+                
+                <!-- কত নম্বর ছবি দেখাচ্ছে তা জানার জন্য কাউন্টার -->
+                <div id="slide-count" style="position: absolute; bottom: 8px; right: 10px; background: rgba(0,0,0,0.6); color: white; padding: 3px 8px; border-radius: 12px; font-size: 12px;">১ / ৫৮</div>
+            </div>
+
+            <h3>প্রিমিয়াম কটন বেডশীট কলকশন (৫৮টি ডিজাইন)</h3>
+            <p>মূল্য: <strong>৳১২৫০</strong></p>
+            <p style="font-size: 14px; color: #555;">বিবরণ: ১০০% সুতি পাকাপোক্ত কালার গ্যারান্টিযুক্ত কিং সাইজ বেডশীট। (ছবিতে ক্লিক করে বা তীরে চেপে সব ডিজাইন দেখুন)</p>
+            <a href="https://wa.me/8801405088331?text=আমি%20প্রিমিয়াম%20কটন%20বেডশীট%20সম্পর্কে%20জানতে%20চাই" target="_blank" class="whatsapp-btn">অর্ডার করুন</a>
+        </div>
+
+        <!-- অটোমেটিক অল-ইমেজ লোডার ও স্লাইডার স্ক্রিপ্ট -->
+        <script>
+            const totalImages = 58;
+            const container = document.getElementById('bedsheet-slides');
             
+            // সব ৫৮টি ছবি অটোমেটিক সিরিয়াল অনুযায়ী গ্যালারিতে যোগ করার কোড
+            for (let i = 5; i < totalImages; i++) {
+                let imgNum = i < 10 ? '000' + i : '00' + i;
+                let img = document.createElement('img');
+                img.src = `IMG-20260717-WA${imgNum}.jpg`;
+                img.alt = `ডিজাইন ${i + 1}`;
+                img.style.cssText = 'width: 100%; flex-shrink: 0; height: auto;';
+                container.appendChild(img);
+            }
+
+            let currentBedsheetIndex = 0;
+            function moveBedsheetSlide(dir) {
+                const slides = document.getElementById('bedsheet-slides');
+                const total = slides.children.length;
+                currentBedsheetIndex = (currentBedsheetIndex + dir + total) % total;
+                slides.style.transform = `translateX(-${currentBedsheetIndex * 100}%)`;
+                document.getElementById('slide-count').innerText = `${currentBedsheetIndex + 1} / ${total}`;
+            }
+
+            // ছবিতে ক্লিক করলে পরের ছবি আসবে
+            document.getElementById('bedsheet-slides').addEventListener('click', function() {
+                moveBedsheetSlide(1);
+            });
+        </script>
+   
             <!-- Product 1 -->
             <div class="product-card">
                 <img src="8d58f-bb11.jpg" alt="ডায়কেয়ার বক্স">
