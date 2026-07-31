@@ -3,351 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- এসইও (SEO) মেটা ট্যাগসমূহ -->
-    <title>A Family Bazar - Index Ergon & Modern Herbal Wholesale</title>
-    <meta name="description" content="এ ফ্যামিলি বাজার - এখানে ইনডেক্স ল্যাবরেটরীজ, নিত্য প্রয়োজনীয় পণ্য সহ কাপড় ও বেডশীট ন্যায্য মূল্যে বিক্রয় করা হয়।">
-    <meta name="author" content="A Family Bazar">
-
-    <!-- গুগল সার্চ কনসোল ভেরিফিকেশন -->
-    <meta name="google-site-verification" content="YOUR_CODE_HERE" />
-
+    <title>A-Family Bazar</title>
     <style>
-        :root {
-            --primary-color: #2e7d32; 
-            --dark-color: #1a1a1a;    
-            --light-bg: #f4f9f4;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #ffffff;
-            color: #333;
-            line-height: 1.6;
+            background-color: #f4f6f8;
+            padding-bottom: 75px;
         }
-
-        header {
-            background-color: var(--dark-color);
-            color: #fff;
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 5px solid var(--primary-color);
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            color: #fff;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .hero {
-            background: var(--light-bg);
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            color: var(--dark-color);
-            margin-bottom: 10px;
-        }
-
-        .join-section {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #ffffff;
-        }
-
-        .join-box {
-            max-width: 600px;
-            margin: 0 auto;
-            border: 1px solid #e0e0e0;
-            padding: 30px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 14px 30px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            margin-top: 15px;
-            box-shadow: 0 4px 6px rgba(46, 125, 50, 0.2);
-            font-size: 16px;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .product-card {
-            border: 1px solid #ddd;
-            padding: 15px;
-            text-align: center;
-            border-radius: 8px;
-            background: #fff;
+        
+        /* টপ সার্চবার */
+        .site-header {
+            background: #ffffff;
+            padding: 12px 15px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #f0f2f5;
+            border-radius: 8px;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+        }
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            width: 100%;
+            font-size: 15px;
+            margin-left: 8px;
         }
 
-        .product-card img {
-            max-width: 100%;
-            height: 200px;
-            object-fit: contain;
+        /* টপ ট্যাবস (All / Store / Service) */
+        .top-tabs {
+            display: flex;
+            background: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            text-align: center;
         }
-
-        .ws-btn {
-            background: #25D366;
-            color: white;
-            padding: 10px 15px;
+        .tab-item {
+            flex: 1;
+            padding: 12px 0;
+            font-weight: bold;
+            color: #555;
             text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
+            font-size: 15px;
+            border-bottom: 3px solid transparent;
+        }
+        .tab-item.active {
+            color: #2e7d32;
+            border-bottom: 3px solid #2e7d32;
+        }
+
+        /* ব্যানার সেকশন */
+        .banner-container {
+            padding: 15px 15px 5px 15px;
+        }
+        .banner-box {
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            color: white;
+            border-radius: 12px;
+            padding: 20px 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        .banner-box h2 { font-size: 18px; margin-bottom: 5px; }
+        .banner-box p { font-size: 13px; opacity: 0.9; }
+
+        /* ক্যাটাগরি গ্রিড সেকশন */
+        .category-container {
+            padding: 15px;
+        }
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 12px;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .category-card {
+            background: #fffdf5;
+            border: 1px solid #f0e6d2;
+            border-radius: 12px;
+            text-align: center;
+            padding: 15px 8px;
+            text-decoration: none;
+            color: #222;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .category-card:active {
+            transform: scale(0.95);
+        }
+        .category-icon {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+        .category-card span {
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* বটম নেভিগেশন বার */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            display: flex;
+            justify-content: space-around;
+            padding: 8px 0;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
+            z-index: 1000;
+        }
+        .nav-item {
+            text-decoration: none;
+            color: #666;
+            font-size: 12px;
+            text-align: center;
+            flex: 1;
+        }
+        .nav-item.active {
+            color: #2e7d32;
             font-weight: bold;
         }
-
-        footer {
-            background: #e8f5e9;
-            padding: 30px 20px;
-            text-align: center;
-            margin-top: 40px;
-            border-top: 2px solid #2c5e2e;
+        .nav-item div {
+            font-size: 18px;
+            margin-bottom: 2px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <img src="A Family Bazar Logo .png" alt="A Family Bazar Logo" style="height: 50px; vertical-align: middle; margin-right: 10px;">
-            A Family Bazar
+    <!-- ১. টপ সার্চবার -->
+    <div class="site-header">
+        <div class="search-box">
+            <span>🔍</span>
+            <input type="text" placeholder="পণ্য বা ক্যাটাগরি খুঁজুন...">
         </div>
-        <nav>
-            <ul>
-                <li><a href="#home">হোম</a></li>
-                <li><a href="#products">পণ্যসমূহ</a></li>
-                <li><a href="join/index.html">নিবন্ধন</a></li>
-            </ul>
-        </nav>
-    </header>
+    </div>
 
-    <section id="home" class="hero">
-        <h1>স্বাগতম এ ফ্যামিলি বাজারে</h1>
-        <p style="font-size: 18px; color: #2c5e2e; font-weight: bold;">ইনডেক্স ল্যাবরেটরীজ, নিত্যপ্রয়োজনীয় পন্য সহ সাইটে সংযুক্ত পণ্য ন্যায্য মূল্যে বিক্রয় করা হয়।</p>
-        <p style="background: #fff3cd; color: #856404; padding: 10px; display: inline-block; border-radius: 5px; margin-top: 15px;">
-            ⚠️ **বিশেষ নোটিশ:** ডিলার মহোদয়দের জন্য সম্মানজনক বিক্রয় রেট ডিলার সুবিধার মধ্যে দেওয়া আছে। বিস্তারিত জানতে সরাসরি হোয়াটসঅ্যাপে মেসেজ দিন।
-        </p>
-    </section>
+    <!-- ২. টপ ট্যাবস (All / Store / Service) -->
+    <div class="top-tabs">
+        <a href="#" class="tab-item active">All</a>
+        <a href="#" class="tab-item">Store</a>
+        <a href="#" class="tab-item">Service</a>
+    </div>
 
-    <!-- নতুন যুক্ত করা ক্লিয়ার বাটন সেকশন যা join ফোল্ডারে নিয়ে যাবে -->
-    <section class="join-section">
-        <div class="join-box">
-            <h2 style="color: #2e7d32; margin-top:0;">🤝 আমাদের সাথে যুক্ত হোন</h2>
-            <p style="color: #666; font-size: 15px; line-height: 1.6;">
-                আপনি কি আমাদের ডিজিটাল মার্কেটিং (চাকুরি), ডিলার পয়েন্ট অথবা পার্টনার শোরুম হিসেবে যুক্ত হতে চান? বিস্তারিত সুবিধাগুলো দেখতে এবং আবেদন করতে নিচের বাটনে ক্লিক করুন।
-            </p>
-            <a href="join/index.html" class="btn">নিবন্ধন করুন / Apply Now 🚀</a>
+    <!-- ৩. অফার ব্যানার -->
+    <div class="banner-container">
+        <div class="banner-box">
+            <h2>🎉 সেরা দামে বিশ্বস্ত কেনাকাটা</h2>
+            <p>আপনার পছন্দের প্রোডাক্ট বেছে নিতে নিচের ক্যাটাগরিতে ক্লিক করুন</p>
         </div>
-    </section>
+    </div>
 
-    <section id="products" style="padding: 20px; background: #fafafa;">
-        <h2 style="text-align: center; margin-bottom: 20px; color: var(--primary-color);">আমাদের পণ্যসমূহ (Products)</h2>
-        <div class="product-grid">
-        <!-- Product Card - Bed Sheet Gallery -->
-        <div class="product-card">
-            <!-- ইমেজ স্লাইডার কন্টেইনার -->
-            <div class="bedsheet-slider-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 8px;">
-                <div id="bedsheet-slides" style="display: flex; transition: transform 0.4s ease-in-out; width: 100%;">
-                    <!-- প্রথম ছবিগুলো লোড হবে -->
-                    <img src="IMG-20260717-WA0000.jpg" alt="ডিজাইন ১" style="width: 100%; flex-shrink: 0; height: auto;">
-                    <img src="IMG-20260717-WA0001.jpg" alt="ডিজাইন ২" style="width: 100%; flex-shrink: 0; height: auto;">
-                    <img src="IMG-20260717-WA0002.jpg" alt="ডিজাইন ৩" style="width: 100%; flex-shrink: 0; height: auto;">
-                    <img src="IMG-20260717-WA0003.jpg" alt="ডিজাইন ৪" style="width: 100%; flex-shrink: 0; height: auto;">
-                    <img src="IMG-20260717-WA0004.jpg" alt="ডিজাইন ৫" style="width: 100%; flex-shrink: 0; height: auto;">
-                </div>
-                
-                <!-- নেভিগেশন বাটন (Next & Previous) -->
-                <button onclick="moveBedsheetSlide(-1)" style="position: absolute; top: 50%; left: 5px; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; padding: 10px 14px; cursor: pointer; border-radius: 50%; font-weight: bold; z-index: 10; font-size: 16px;">❮</button>
-                <button onclick="moveBedsheetSlide(1)" style="position: absolute; top: 50%; right: 5px; transform: translateY(-50%); background: rgba(0,0,0,0.6); color: white; border: none; padding: 10px 14px; cursor: pointer; border-radius: 50%; font-weight: bold; z-index: 10; font-size: 16px;">❯</button>
-                
-                <!-- কত নম্বর ছবি দেখাচ্ছে তা জানার জন্য কাউন্টার -->
-                <div id="slide-count" style="position: absolute; bottom: 8px; right: 10px; background: rgba(0,0,0,0.6); color: white; padding: 3px 8px; border-radius: 12px; font-size: 12px;">১ / ৫৮</div>
-            </div>
-
-            <h3>প্রিমিয়াম কটন বেডশীট কালেকশন (৫৮টি ডিজাইন)</h3>
-            <p>মূল্য: <strong>বেডশীটে দেওয়া আছে</strong></p>
-            <p style="font-size: 14px; color: #555;">বিবরণ: ১০০% সুতি পাকাপোক্ত কালার গ্যারান্টিযুক্ত কিং সাইজ বেডশীট। (ছবিতে ক্লিক করে বা তীরে চেপে সব ডিজাইন দেখুন)</p>
-            <a href="https://wa.me/8801405088331?text=আমি%20প্রিমিয়াম%20কটন%20বেডশীট%20সম্পর্কে%20জানতে%20চাই" target="_blank" class="whatsapp-btn">অর্ডার করুন</a>
+    <!-- ৪. সব ক্যাটাগরি অপশন সমূহ -->
+    <div class="category-container">
+        <div class="section-title">ক্যাটাগরি সমূহ</div>
+        
+        <div class="category-grid">
+            <a href="#" class="category-card">
+                <div class="category-icon">🌿</div>
+                <span>হারবাল</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">🧪</div>
+                <span>হোমিও</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">💊</div>
+                <span>সাপ্লিমেন্ট (ফুড ও ডায়টেটরী)</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">✨</div>
+                <span>বিউটি</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">🩺</div>
+                <span>সার্জিক্যাল</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">🏥</div>
+                <span>চিকিৎসা</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">🛍️</div>
+                <span>কনজুমার</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">💄</div>
+                <span>কসমেটিকস</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">🍏</div>
+                <span>ফুড</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">📦</div>
+                <span>ফুড প্রোডাক্টস</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">👕</div>
+                <span>পোশাক</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">🧸</div>
+                <span>বেবী ও হোম কেয়ার</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">🛋️</div>
+                <span>ফার্নিচার</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">⚡</div>
+                <span>ইলেকট্রনিক্স</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">🍽️</div>
+                <span>ক্রোকারিজ</span>
+            </a>
+            <a href="#" class="category-card">
+                <div class="category-icon">🌟</div>
+                <span>অনন্যা</span>
+            </a>
         </div>
+    </div>
 
-        <!-- অটোমেটিক অল-ইমেজ লোডার ও স্লাইডার স্ক্রিপ্ট -->
-        <script>
-            const totalImages = 58;
-            const container = document.getElementById('bedsheet-slides');
-            
-            // সব ৫৮টি ছবি অটোমেটিক সিরিয়াল অনুযায়ী গ্যালারিতে যোগ করার কোড
-            for (let i = 5; i < totalImages; i++) {
-                let imgNum = i < 10 ? '000' + i : '00' + i;
-                let img = document.createElement('img');
-                img.src = `IMG-20260717-WA${imgNum}.jpg`;
-                img.alt = `ডিজাইন ${i + 1}`;
-                img.style.cssText = 'width: 100%; flex-shrink: 0; height: auto;';
-                container.appendChild(img);
-            }
-
-            let currentBedsheetIndex = 0;
-            function moveBedsheetSlide(dir) {
-                const slides = document.getElementById('bedsheet-slides');
-                const total = slides.children.length;
-                currentBedsheetIndex = (currentBedsheetIndex + dir + total) % total;
-                slides.style.transform = `translateX(-${currentBedsheetIndex * 100}%)`;
-                document.getElementById('slide-count').innerText = `${currentBedsheetIndex + 1} / ${total}`;
-            }
-
-            // ছবিতে ক্লিক করলে পরের ছবি আসবে
-            document.getElementById('bedsheet-slides').addEventListener('click', function() {
-                moveBedsheetSlide(1);
-            });
-        </script>
-   
-            <!-- Product 1 -->
-            <div class="product-card">
-                <img src="8d58f-bb11.jpg" alt="ডায়কেয়ার বক্স">
-                <h3>ক্যাপসুল : ডায়কেয়ার বক্স (30 পিস)</h3>
-                <p>টিপি রেট: ৳৩৭৫ | এমআরপি: ৳৪৫০</p>
-                <a href="https://wa.me/8801405088331?text=আমি%20ডায়কেয়ার%20বক্স%20সম্পর্কে%20জানতে%20চাই" target="_blank" class="ws-btn">হোয়াটসঅ্যাপে অর্ডার করুন</a>
-            </div>
-
-            </div>
-
-        <!-- Product 6 (মাশরুম টুথপেস্ট) -->
-        <div class="product-card">
-            <img src="GMlv8qb66XLBtotTEjqy bVzCkb7mcCm3Wis6sgkW.jpg" alt="মাশরুম টুথপেস্ট" style="width: 100%; height: auto; border-radius: 8px;">
-            <h3>মাশরুম টুথপেস্ট (১৫০ গ্রাম)</h3>
-            <p>মূল্য: ৳২০০</p>
-            <a href="https://wa.me/8801405088331?text=আমি%20মাশরুম%20টুথপেস্ট%20সম্পর্কে%20জানতে%20চাই" target="_blank" class="whatsapp-btn">অর্ডার করুন</a>
-        </div>
-
-        <!-- Product 7 (হারবাল শ্যাম্পু) -->
-        <div class="product-card">
-            <img src="OPZmmJGydLvMSdZhq7JnWkAOZGJC9ZRTsmyPpEL.webp" alt="হারবাল শ্যাম্পু" style="width: 100%; height: auto; border-radius: 8px;">
-            <h3>হারবাল শ্যাম্পু (১৫০ গ্রাম)</h3>
-            <p>মূল্য: ৳২৮০</p>
-            <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20শ্যাম্পু%20সম্পর্কে%20জানতে%20চাই" target="_blank" class="whatsapp-btn">অর্ডার করুন</a>
-        </div>
-
-        <!-- Product 8 (টারমারিক সাবান) -->
-        <div class="product-card">
-            <img src="AWrwUAxBj7iLk8bujoyQ7aitXrPzvqFwp23S1hH.webp" alt="টারমারিক অরেঞ্জ সাবান" style="width: 100%; height: auto; border-radius: 8px;">
-            <h3>টারমারিক অরেঞ্জ সাবান (১০০ গ্রাম)</h3>
-            <p>মূল্য: ৳১৬০</p>
-            <a href="https://wa.me/8801405088331?text=আমি%20টারমারিক%20অরেঞ্জ%20সাবান%20সম্পর্কে%20জানতে%20চাই" target="_blank" class="whatsapp-btn">অর্ডার করুন</a>
-        </div>
-
-        <!-- Product 9 (জিনসেং ফেসওয়াশ) -->
-        <div class="product-card">
-            <img src="gjhOEuWq5vQEFng2ryx2Hw5aePkSXBXvvf3WrCZh.webp" alt="জিনসেং হানি ফেসওয়াশ" style="width: 100%; height: auto; border-radius: 8px;">
-            <h3>জিনসেং হানি ফেসওয়াশ (৭০ মিলি)</h3>
-            <p>মূল্য: ৳২০০</p>
-            <a href="https://wa.me/8801405088331?text=আমি%20জিনসেং%20হানি%20ফেসওয়াশ%20সম্পর্কে%20জানতে%20চাই" target="_blank" class="whatsapp-btn">অর্ডার করুন</a>
-        </div>
-
-
-        </div>
-    </section>
-        <!-- Product 10 (প্রিমিয়াম পোলো শার্ট - অল কালার গ্যালারি) -->
-        <div class="product-card">
-            <!-- ইমেজ স্লাইডার কন্টেইনার -->
-            <div class="slider-container" style="position: relative; width: 100%; overflow: hidden; border-radius: 8px;">
-                <div class="product-slides" style="display: flex; transition: transform 0.4s ease-in-out; width: 100%;">
-                    <img src="Polo.jpg" alt="কালার ১" style="width: 100%; flex-shrink: 0; height: auto;">
-                    <img src="Polo1.jpg" alt="কালার ২" style="width: 100%; flex-shrink: 0; height: auto;">
-                    <img src="Polo2.jpg" alt="কালার ৩" style="width: 100%; flex-shrink: 0; height: auto;">
-                    <img src="Polo3.jpg" alt="কালার ৪" style="width: 100%; flex-shrink: 0; height: auto;">
-                    <img src="Polo4.jpg" alt="কালার ৫" style="width: 100%; flex-shrink: 0; height: auto;">
-                    <img src="Polo5.jpg" alt="কালার ৬" style="width: 100%; flex-shrink: 0; height: auto;">
-                    <img src="Polo6.jpg" alt="কালার ৭" style="width: 100%; flex-shrink: 0; height: auto;">
-                    <img src="Polo7.jpg" alt="কালার ৮" style="width: 100%; flex-shrink: 0; height: auto;">
-                </div>
-                
-                <!-- পরের ও আগের ছবি দেখার বোতাম (ছবিতে ক্লিক বা টাচ করার জন্য) -->
-                <button onclick="moveSlide(-1)" style="position: absolute; top: 50%; left: 5px; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 8px 12px; cursor: pointer; border-radius: 50%; font-weight: bold; z-index: 10;">❮</button>
-                <button onclick="moveSlide(1)" style="position: absolute; top: 50%; right: 5px; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 8px 12px; cursor: pointer; border-radius: 50%; font-weight: bold; z-index: 10;">❯</button>
-            </div>
-
-            <h3>প্রিমিয়াম পোলো শার্ট (সবগুলো কালার)</h3>
-            <p>খুচরা মূল্য: <del>৳৫৯০</del> <br> <strong>ডিসকাউন্ট মূল্য: ৳৪৫০</strong></p>
-            <p style="font-size: 14px; color: #555;">বিবরণ: হাই কোয়ালিটি স্লাপ কাপড় 100% সফট কটন ও কালার গ্যারান্টি (ছবিতে ক্লিক করে সব কালার দেখুন)</p>
-            <a href="https://wa.me/8801405088331?text=আমি প্রিমিয়াম পোলো শার্ট কিনতে চাই" target="_blank" class="whatsapp-btn">অর্ডার করুন</a>
-        </div>
-
-        <!-- ছবি পরিবর্তনের জন্য ছোট স্ক্রিপ্ট -->
-        <script>
-            let currentSlide = 0;
-            function moveSlide(direction) {
-                const slides = document.querySelector('.product-slides');
-                const totalSlides = slides.children.length;
-                currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
-                slides.style.transform = `translateX(-${currentSlide * 100}%)`;
-            }
-            // ছবিতে সরাসরি ক্লিক করলেও যেন পরের ছবি আসে
-            document.querySelector('.product-slides').addEventListener('click', function() {
-                moveSlide(1);
-            });
-        </script>
-
-        </div>
-
-        <!-- Product 18 (টি-শার্ট) -->
-        <div class="product-card">
-            <img src="Tshirt .jpg" alt="প্রিমিয়াম টি-শার্ট" style="width: 100%; height: auto; border-radius: 8px;">
-            <h3>প্রিমিয়াম টি-শার্ট</h3>
-            <p>খুচরা মূল্য: <del>৳৫৯০</del> <br> <strong>ডিসকাউন্ট মূল্য: ৳৩৫০</strong></p>
-            <p style="font-size: 14px; color: #555;">বিবরণ: হাই কোয়ালিটি স্লাপ কাপড় 100% সফট কটন ও কালার গ্যারান্টি</p>
-            <a href="https://wa.me/8801405088331?text=আমি প্রিমিয়াম টি-শার্টটি কিনতে চাই" target="_blank" class="whatsapp-btn">অর্ডার করুন</a>
-        </div>
-
-        </div>
-
-    <footer>
-        <p style="font-weight: bold; color: #2c5e2e; margin-bottom: 15px;">পর্যায়ক্রমে আরো অন্যান্য পণ্য সংযোগ করা হবে।</p>
-        <hr style="border: 0; border-top: 1px solid #ccc; max-width: 300px; margin: 10px auto;">
-        <h2 style="color: var(--primary-color);">যোগাযোগ ও পেমেন্ট</h2>
-        <p>📞 কল ও হোয়াটসঅ্যাপ: <strong>01405088331</strong></p>
-        <p>💳 রকেট / বিকাশ / নগদ নাম্বার: <strong>01716 2076 14</strong></p>
-        <p style="color: #666; font-style: italic;">(ব্যাংক অ্যাকাউন্ট নাম্বার পরবর্তীতে আপডেট করা হবে)</p>
-        <p style="margin-top: 20px; font-size: 13px; color: #888;">&copy; ২০২৬ এ ফ্যামিলি বাজার | সর্বস্বত্ব সংরক্ষিত।</p>
-    </footer>
+    <!-- ৫. ফুটার নেভিগেশন বার -->
+    <div class="bottom-nav">
+        <a href="index.html" class="nav-item active">
+            <div>🏠</div> হোম
+        </a>
+        <a href="join/index.html" class="nav-item">
+            <div>💼</div> ইনকাম হাব
+        </a>
+        <a href="https://wa.me/8801405088331" class="nav-item">
+            <div>💬</div> হোয়াটসঅ্যাপ
+        </a>
+        <a href="#" class="nav-item">
+            <div>👤</div> একাউন্ট
+        </a>
+    </div>
 
 </body>
 </html>
