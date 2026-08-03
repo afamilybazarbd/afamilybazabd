@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ফুড - A-Family Bazar</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f8; padding-bottom: 75px; }
+
+        /* হেডার ও ব্যাক বাটন */
+        .category-header {
+            background: #ffffff;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .back-btn {
+            font-size: 20px;
+            text-decoration: none;
+            color: #333;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        .category-header h2 { font-size: 18px; color: #2e7d32; }
+
+        /* প্রোডাক্ট গ্রিড */
+        .product-container { padding: 15px; }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        .product-card {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product-card img {
+            width: 100%;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        .product-title { font-size: 14px; font-weight: bold; color: #333; margin-bottom: 5px; }
+        .product-price { color: #2e7d32; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+        .buy-btn {
+            background: #2e7d32;
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+            display: block;
+        }
+
+        /* বটম নেভিগেশন */
+        .bottom-nav {
+            position: fixed; bottom: 0; left: 0; width: 100%;
+            background: #ffffff; display: flex; justify-content: space-around;
+            padding: 8px 0; box-shadow: 0 -2px 10px rgba(0,0,0,0.08); z-index: 1000;
+        }
+        .nav-item { text-decoration: none; color: #666; font-size: 12px; text-align: center; flex: 1; }
+        .nav-item.active { color: #2e7d32; font-weight: bold; }
+        .nav-item div { font-size: 18px; margin-bottom: 2px; }
+    </style>
+</head>
+<body>
+
+    <!-- টপ হেডার (পিছনে যাওয়ার বাটনসহ) -->
+    <div class="category-header">
+        <a href="index.html" class="back-btn">⬅</a>
+        <h2>🍏 ফুড আইটেম সমূহ</h2>
+    </div>
+
+    <!-- প্রোডাক্ট লিস্ট সেকশন -->
+    <div class="product-container">
+        <div class="product-grid">
+
+            <!-- প্রোডাক্ট ১ -->
+            <div class="product-card">
+                <div>
+                    <img src="8d58f-bb11.jpg" alt="ফুড আইটেম">
+                    <div class="product-title">অর্গানিক সুন্দরবনের মধু (৫০০ গ্রাম)</div>
+                    <div class="product-price">৳ ৬৫০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20অর্গানিক%20সুন্দরবনের%20মধু%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- প্রোডাক্ট ২ -->
+            <div class="product-card">
+                <div>
+                    <img src="8d58f-bb11.jpg" alt="ফুড আইটেম">
+                    <div class="product-title">প্রিমিয়াম প্রসেসড নাটস ও ড্রাই ফ্রুটস</div>
+                    <div class="product-price">৳ ৫৫০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20প্রিমিয়াম%20প্রসেসড%20নাটস%20ও%20ড্রাই%20ফ্রুটস%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- বটম নেভিগেশন বার -->
+    <div class="bottom-nav">
+        <a href="index.html" class="nav-item"><div>🏠</div> হোম</a>
+        <a href="join/index.html" class="nav-item"><div>💼</div> ইনকাম হাব</a>
+        <a href="https://wa.me/8801405088331" class="nav-item"><div>💬</div> হোয়াটসঅ্যাপ</a>
+        <a href="#" class="nav-item"><div>👤</div> একাউন্ট</a>
+    </div>
+
+</body>
+</html>
