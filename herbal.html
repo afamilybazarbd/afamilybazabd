@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>হারবাল আইটেম - A-Family Bazar</title>
+    <title>হারবাল - A-Family Bazar</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f8; padding-bottom: 75px; }
@@ -32,7 +32,7 @@
         .product-container { padding: 15px; }
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* মোবাইলে এক সারিতে ২ টি প্রোডাক্ট */
+            grid-template-columns: repeat(2, 1fr); /* মোবাইলে পাশাপাশি ২ টি প্রোডাক্ট */
             gap: 12px;
         }
         .product-card {
@@ -46,62 +46,22 @@
             flex-direction: column;
             justify-content: space-between;
         }
-        
-        /* স্লাইডার স্টাইল (প্রোডাক্ট ১ এর ভেতরে) */
-        .card-slider-box {
-            position: relative;
+        .product-card img {
             width: 100%;
-            height: 130px;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-bottom: 8px;
-            background-color: #f0f0f0;
-        }
-        .card-slider-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        .card-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(46, 125, 50, 0.85);
-            color: white;
-            border: none;
-            font-size: 12px;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .card-prev { left: 4px; }
-        .card-next { right: 4px; }
-
-        /* সাধারণ প্রোডাক্ট ইমেজ */
-        .product-card > div > img {
-            width: 100%;
-            height: 130px;
+            height: 140px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 8px;
         }
-
-        .product-title { font-size: 14px; font-weight: bold; color: #333; margin-bottom: 5px; }
-        .product-price { color: #2e7d32; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+        .product-title { font-size: 13px; font-weight: bold; color: #333; margin-bottom: 5px; }
+        .product-price { color: #2e7d32; font-weight: bold; font-size: 14px; margin-bottom: 10px; }
         .buy-btn {
             background: #2e7d32;
             color: white;
             text-decoration: none;
-            padding: 8px 12px;
+            padding: 8px 10px;
             border-radius: 6px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: bold;
             display: block;
         }
@@ -119,119 +79,246 @@
 </head>
 <body>
 
-    <!-- টপ হেডার (পিছনে যাওয়ার বাটনসহ) -->
+    <!-- টপ হেডার -->
     <div class="category-header">
         <a href="index.html" class="back-btn">⬅</a>
-        <h2>🌿 হারবাল আইটেম সমূহ</h2>
+        <h2>🌿 হারবাল প্রোডাক্ট কালেকশন</h2>
     </div>
 
     <!-- প্রোডাক্ট লিস্ট সেকশন -->
     <div class="product-container">
         <div class="product-grid">
 
-            <!-- প্রোডাক্ট ১ (ইনডেক্স ছবি গ্যালারিসহ) -->
+            <!-- ১. মূল ইনডেক্স ছবি -->
             <div class="product-card">
                 <div>
-                    <!-- গ্যালারি স্লাইডার বক্স -->
-                    <div class="card-slider-box">
-                        <button class="card-nav-btn card-prev" onclick="prevCardImg()">❮</button>
-                        <img id="card-slider-img" src="IMG_index.jpg" alt="হারবাল ছবি" onclick="nextCardImg()">
-                        <button class="card-nav-btn card-next" onclick="nextCardImg()">❯</button>
-                    </div>
-
-                    <div class="product-title">আয়ুর্বেদিক হারবাল ওয়েল</div>
+                    <img src="IMG_index.jpg" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ১</div>
                     <div class="product-price">৳ ৩৫০</div>
                 </div>
-                <a href="https://wa.me/8801405088331?text=আমি%20আয়ুর্বেদিক%20হারবাল%20ওয়েল%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20১%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
             </div>
 
-            <!-- প্রোডাক্ট ২ -->
+            <!-- ২. index1.avif -->
             <div class="product-card">
                 <div>
-                    <img src="8d58f-bb11.jpg" alt="হারবাল ছবি">
-                    <div class="product-title">ন্যাচারাল হারবাল হেয়ারপ্যাক</div>
+                    <img src="index1.avif" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ২</div>
+                    <div class="product-price">৳ ৩০০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20২%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ৩. index2.avif -->
+            <div class="product-card">
+                <div>
+                    <img src="index2.avif" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ৩</div>
+                    <div class="product-price">৳ ৪০০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20৩%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ৪. index3.jpeg -->
+            <div class="product-card">
+                <div>
+                    <img src="index3.jpeg" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ৪</div>
                     <div class="product-price">৳ ২৫০</div>
                 </div>
-                <a href="https://wa.me/8801405088331?text=আমি%20ন্যাচারাল%20হারবাল%20হেয়ারপ্যাক%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20৪%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ৫. index4.avif -->
+            <div class="product-card">
+                <div>
+                    <img src="index4.avif" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ৫</div>
+                    <div class="product-price">৳ ৪৫০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20৫%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ৬. index5.avif -->
+            <div class="product-card">
+                <div>
+                    <img src="index5.avif" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ৬</div>
+                    <div class="product-price">৳ ৫০০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20৬%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ৭. index6.jpeg -->
+            <div class="product-card">
+                <div>
+                    <img src="index6.jpeg" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ৭</div>
+                    <div class="product-price">৳ ২০০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20৭%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ৮. index7.avif -->
+            <div class="product-card">
+                <div>
+                    <img src="index7.avif" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ৮</div>
+                    <div class="product-price">৳ ৫৫০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20৮%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ৯. index8.avif -->
+            <div class="product-card">
+                <div>
+                    <img src="index8.avif" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ৯</div>
+                    <div class="product-price">৳ ৬০০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20৯%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ১০. index9.avif -->
+            <div class="product-card">
+                <div>
+                    <img src="index9.avif" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ১০</div>
+                    <div class="product-price">৳ ৩২০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20১০%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ১১. index10.jpeg -->
+            <div class="product-card">
+                <div>
+                    <img src="index10.jpeg" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ১১</div>
+                    <div class="product-price">৳ ২৮০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20১১%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ১২. index11.avif -->
+            <div class="product-card">
+                <div>
+                    <img src="index11.avif" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ১২</div>
+                    <div class="product-price">৳ ৩৮০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20১২%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ১৩. index12.avif -->
+            <div class="product-card">
+                <div>
+                    <img src="index12.avif" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ১৩</div>
+                    <div class="product-price">৳ ৪২০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20১৩%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ১৪. index13.avif -->
+            <div class="product-card">
+                <div>
+                    <img src="index13.avif" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ১৪</div>
+                    <div class="product-price">৳ ৪৬০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20১৪%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ১৫. index14.avif -->
+            <div class="product-card">
+                <div>
+                    <img src="index14.avif" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ১৫</div>
+                    <div class="product-price">৳ ২৭০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20১৫%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ১৬. index15.avif -->
+            <div class="product-card">
+                <div>
+                    <img src="index15.avif" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ১৬</div>
+                    <div class="product-price">৳ ৩৯০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20১৬%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ১৭. index16.avif -->
+            <div class="product-card">
+                <div>
+                    <img src="index16.avif" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ১৭</div>
+                    <div class="product-price">৳ ৩১০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20১৭%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ১৮. index18.avif -->
+            <div class="product-card">
+                <div>
+                    <img src="index18.avif" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ১৮</div>
+                    <div class="product-price">৳ ৪৯০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20১৮%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ১৯. index19.avif -->
+            <div class="product-card">
+                <div>
+                    <img src="index19.avif" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ১৯</div>
+                    <div class="product-price">৳ ৩৩০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20১৯%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ২০. index20.jpg -->
+            <div class="product-card">
+                <div>
+                    <img src="index20.jpg" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ২০</div>
+                    <div class="product-price">৳ ৫২০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20২০%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ২১. index21.jpg -->
+            <div class="product-card">
+                <div>
+                    <img src="index21.jpg" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ২১</div>
+                    <div class="product-price">৳ ৫৬০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20২১%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+            </div>
+
+            <!-- ২২. index22.jpg -->
+            <div class="product-card">
+                <div>
+                    <img src="index22.jpg" alt="হারবাল পণ্য">
+                    <div class="product-title">হারবাল প্রোডাক্ট ২২</div>
+                    <div class="product-price">৳ ৪৪০</div>
+                </div>
+                <a href="https://wa.me/8801405088331?text=আমি%20হারবাল%20প্রোডাক্ট%20২২%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
             </div>
 
         </div>
     </div>
 
-    <!-- বটm নেভিগেশন বার -->
+    <!-- বটম নেভিগেশন বার -->
     <div class="bottom-nav">
         <a href="index.html" class="nav-item"><div>🏠</div> হোম</a>
         <a href="join/index.html" class="nav-item"><div>💼</div> ইনকাম হাব</a>
         <a href="https://wa.me/8801405088331" class="nav-item"><div>💬</div> হোয়াটসঅ্যাপ</a>
         <a href="#" class="nav-item"><div>👤</div> একাউন্ট</a>
     </div>
-
-    <!-- স্লাইডার স্ক্রিপ্ট -->
-    <script>
-        const indexImages = [
-            "IMG_index.jpg",
-            "IMG_index-1.jpg",
-            "IMG_index-2.jpg",
-            "IMG_index-3.jpg",
-            "IMG_index-4.jpg",
-            "IMG_index-5.jpg",
-            "IMG_index-6.jpg",
-            "IMG_index-7.jpg",
-            "IMG_index-8.jpg",
-            "IMG_index-9.jpg",
-            "IMG_index-10.jpg",
-            "IMG_index-11.jpg",
-            "IMG_index-12.jpg",
-            "IMG_index-13.jpg",
-            "IMG_index-14.jpg",
-            "IMG_index-15.jpg",
-            "IMG_index-16.jpg",
-            "IMG_index-17.jpg",
-            "IMG_index-18.jpg",
-            "IMG_index-19.jpg",
-            "IMG_index-20.jpg",
-            "IMG_index-21.jpg",
-            "IMG_index-22.jpg",
-            "IMG_index-23.jpg",
-            "IMG_index-24.jpg",
-            "IMG_index-25.jpg",
-            "IMG_index-26.jpg",
-            "IMG_index-27.jpg",
-            "IMG_index-28.jpg",
-            "IMG_index-29.jpg",
-            "IMG_index-30.jpg",
-            "IMG_index-31.jpg",
-            "IMG_index-32.jpg",
-            "IMG_index-33.jpg",
-            "IMG_index-34.jpg",
-            "IMG_index-35.jpg",
-            "IMG_index-36.jpg",
-            "IMG_index-37.jpg",
-            "IMG_index-38.jpg",
-            "IMG_index-39.jpg",
-            "IMG_index-40.jpg",
-            "IMG_index-41.jpg",
-            "IMG_index-42.jpg",
-            "IMG_index-43.jpg",
-            "IMG_index-44.jpg"
-        ];
-
-        let currentCardIndex = 0;
-
-        function updateCardImage(index) {
-            document.getElementById("card-slider-img").src = indexImages[index];
-        }
-
-        function nextCardImg() {
-            currentCardIndex = (currentCardIndex + 1) % indexImages.length;
-            updateCardImage(currentCardIndex);
-        }
-
-        function prevCardImg() {
-            currentCardIndex = (currentCardIndex - 1 + indexImages.length) % indexImages.length;
-            updateCardImage(currentCardIndex);
-        }
-    </script>
 
 </body>
 </html>
