@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>হারবাল - A-Family Bazar</title>
+    <title>হারবাল আইটেম - A-Family Bazar</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f6f8; padding-bottom: 75px; }
@@ -32,7 +32,7 @@
         .product-container { padding: 15px; }
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* মোবাইলে এক সারিতে ২টি প্রোডাক্ট */
+            grid-template-columns: repeat(2, 1fr); /* মোবাইলে এক সারিতে ২ টি প্রোডাক্ট */
             gap: 12px;
         }
         .product-card {
@@ -46,13 +46,53 @@
             flex-direction: column;
             justify-content: space-between;
         }
-        .product-card img {
+        
+        /* স্লাইডার স্টাইল (প্রোডাক্ট ১ এর ভেতরে) */
+        .card-slider-box {
+            position: relative;
+            width: 100%;
+            height: 130px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 8px;
+            background-color: #f0f0f0;
+        }
+        .card-slider-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .card-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(46, 125, 50, 0.85);
+            color: white;
+            border: none;
+            font-size: 12px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .card-prev { left: 4px; }
+        .card-next { right: 4px; }
+
+        /* সাধারণ প্রোডাক্ট ইমেজ */
+        .product-card > div > img {
             width: 100%;
             height: 130px;
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 8px;
         }
+
         .product-title { font-size: 14px; font-weight: bold; color: #333; margin-bottom: 5px; }
         .product-price { color: #2e7d32; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
         .buy-btn {
@@ -82,43 +122,116 @@
     <!-- টপ হেডার (পিছনে যাওয়ার বাটনসহ) -->
     <div class="category-header">
         <a href="index.html" class="back-btn">⬅</a>
-        <h2>🌿 হার্বাল আইটেম সমূহ</h2>
+        <h2>🌿 হারবাল আইটেম সমূহ</h2>
     </div>
 
     <!-- প্রোডাক্ট লিস্ট সেকশন -->
     <div class="product-container">
         <div class="product-grid">
 
-            <!-- প্রোডাক্ট ১ -->
+            <!-- প্রোডাক্ট ১ (ইনডেক্স ছবি গ্যালারিসহ) -->
             <div class="product-card">
                 <div>
-                    <img src="8d58f-bb11.jpg" alt="প্রোডাক্টের ছবি">
-                    <div class="product-title">আয়ুর্বেদিক হারবাল ওয়েল</div>
+                    <!-- গ্যালারি স্লাইডার বক্স -->
+                    <div class="card-slider-box">
+                        <button class="card-nav-btn card-prev" onclick="prevCardImg()">❮</button>
+                        <img id="card-slider-img" src="IMG_index.jpg" alt="হারবাল ছবি" onclick="nextCardImg()">
+                        <button class="card-nav-btn card-next" onclick="nextCardImg()">❯</button>
+                    </div>
+
+                    <div class="product-title">আয়ুর্বেদিক হারবাল ওয়েল</div>
                     <div class="product-price">৳ ৩৫০</div>
                 </div>
-                <a href="https://wa.me/8801405088331?text=আমি%20আয়ুর্বেদিক%20হারবাল%20ওয়েল%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+                <a href="https://wa.me/8801405088331?text=আমি%20আয়ুর্বেদিক%20হারবাল%20ওয়েল%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
             </div>
 
             <!-- প্রোডাক্ট ২ -->
             <div class="product-card">
                 <div>
-                    <img src="8d58f-bb11.jpg" alt="প্রোডাক্টের ছবি">
-                    <div class="product-title">নেচারাল হার্বাল ফেসপ্যাক</div>
+                    <img src="8d58f-bb11.jpg" alt="হারবাল ছবি">
+                    <div class="product-title">ন্যাচারাল হারবাল হেয়ারপ্যাক</div>
                     <div class="product-price">৳ ২৫০</div>
                 </div>
-                <a href="https://wa.me/8801405088331?text=আমি%20নেচারাল%20হার্বাল%20ফেসপ্যাক%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
+                <a href="https://wa.me/8801405088331?text=আমি%20ন্যাচারাল%20হারবাল%20হেয়ারপ্যাক%20অর্ডার%20করতে%20চাই" class="buy-btn">অর্ডার করুন</a>
             </div>
 
         </div>
     </div>
 
-    <!-- বটম নেভিগেশন বার -->
+    <!-- বটm নেভিগেশন বার -->
     <div class="bottom-nav">
         <a href="index.html" class="nav-item"><div>🏠</div> হোম</a>
         <a href="join/index.html" class="nav-item"><div>💼</div> ইনকাম হাব</a>
         <a href="https://wa.me/8801405088331" class="nav-item"><div>💬</div> হোয়াটসঅ্যাপ</a>
         <a href="#" class="nav-item"><div>👤</div> একাউন্ট</a>
     </div>
+
+    <!-- স্লাইডার স্ক্রিপ্ট -->
+    <script>
+        const indexImages = [
+            "IMG_index.jpg",
+            "IMG_index-1.jpg",
+            "IMG_index-2.jpg",
+            "IMG_index-3.jpg",
+            "IMG_index-4.jpg",
+            "IMG_index-5.jpg",
+            "IMG_index-6.jpg",
+            "IMG_index-7.jpg",
+            "IMG_index-8.jpg",
+            "IMG_index-9.jpg",
+            "IMG_index-10.jpg",
+            "IMG_index-11.jpg",
+            "IMG_index-12.jpg",
+            "IMG_index-13.jpg",
+            "IMG_index-14.jpg",
+            "IMG_index-15.jpg",
+            "IMG_index-16.jpg",
+            "IMG_index-17.jpg",
+            "IMG_index-18.jpg",
+            "IMG_index-19.jpg",
+            "IMG_index-20.jpg",
+            "IMG_index-21.jpg",
+            "IMG_index-22.jpg",
+            "IMG_index-23.jpg",
+            "IMG_index-24.jpg",
+            "IMG_index-25.jpg",
+            "IMG_index-26.jpg",
+            "IMG_index-27.jpg",
+            "IMG_index-28.jpg",
+            "IMG_index-29.jpg",
+            "IMG_index-30.jpg",
+            "IMG_index-31.jpg",
+            "IMG_index-32.jpg",
+            "IMG_index-33.jpg",
+            "IMG_index-34.jpg",
+            "IMG_index-35.jpg",
+            "IMG_index-36.jpg",
+            "IMG_index-37.jpg",
+            "IMG_index-38.jpg",
+            "IMG_index-39.jpg",
+            "IMG_index-40.jpg",
+            "IMG_index-41.jpg",
+            "IMG_index-42.jpg",
+            "IMG_index-43.jpg",
+            "IMG_index-44.jpg"
+        ];
+
+        let currentCardIndex = 0;
+
+        function updateCardImage(index) {
+            document.getElementById("card-slider-img").src = indexImages[index];
+        }
+
+        function nextCardImg() {
+            currentCardIndex = (currentCardIndex + 1) % indexImages.length;
+            updateCardImage(currentCardIndex);
+        }
+
+        function prevCardImg() {
+            currentCardIndex = (currentCardIndex - 1 + indexImages.length) % indexImages.length;
+            updateCardImage(currentCardIndex);
+        }
+    </script>
 
 </body>
 </html>
